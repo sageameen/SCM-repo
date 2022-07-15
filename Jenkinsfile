@@ -1,7 +1,7 @@
 pipeline {
   environment {
     imagename = "ameenplml/test"
-    registryCredential = 'ameenplml'
+    registryCredential = "ameenplml"
     dockerImage = ''
   }
   agent any
