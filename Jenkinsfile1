@@ -9,8 +9,8 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        sh 'docker-compose up -d'
-        sh 'docker-compose ps -a'
+        sh 'sudo docker-compose up -d'
+        sh 'sudo docker-compose ps -a'
       }
     }
     stage('Remove Unused docker image') {
