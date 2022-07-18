@@ -1,14 +1,7 @@
-version: '3.8'
 services:
   web:
-    build:
-      context: ./
-      target: dev
-    volumes:
-      - .:/src
-    command: npm run start:dev
+    build: .
     ports:
-      - "3000:3000"
-    environment:
-      NODE_ENV: development
-      DEBUG: nodejs-docker-express:*
+      - "8000:5000"
+  redis:
+    image: "redis:alpine"

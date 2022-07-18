@@ -1,17 +1,11 @@
-FROM node:18-alpine as base
-
-WORKDIR /src
-COPY package*.json /
-EXPOSE 3000
-
-FROM base as production
-ENV NODE_ENV=production
-RUN npm ci
-COPY . /
-CMD ["node", "bin/www"]
-
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install -g nodemon && npm install
-COPY . /
-CMD ["nodemon", "bin/www"]
+# syntax=docker/dockerfile:1
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD ["flask", "run"]
