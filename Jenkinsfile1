@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Pull image') {
       steps {
-     script {
+        script {
           docker.withRegistry( '', registryCredential ) {
              dockerImage.pull('latest')
       } 
