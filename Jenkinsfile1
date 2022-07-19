@@ -6,9 +6,7 @@ pipeline {
         sh '''
           docker version
           docker info
-          docker-compose -version 
-          curl --version
-          jq --version
+          docker compose version 
         '''
       }
     }
@@ -21,8 +19,8 @@ pipeline {
 
     stage('Building image') {
       steps{
-        sh 'docker-compose up -d'
-        sh 'docker-compose ps -a'
+        sh 'docker compose up -d'
+        sh 'docker compose ps -a'
       }
     }
   }
