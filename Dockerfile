@@ -1,4 +1,4 @@
-ROM ubuntu:latest
+FROM ubuntu:latest
 MAINTAINER sage
 
 RUN apt-get update
