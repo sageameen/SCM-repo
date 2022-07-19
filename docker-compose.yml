@@ -4,5 +4,3 @@ services:
     image: "ameenplml/test:latest"
     ports:
       - "8000:5000"
-  redis:
-    image: "redis:alpine"
