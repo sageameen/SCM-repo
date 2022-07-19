@@ -1,6 +1,6 @@
 version: "3.3"
 services:
   web:
-    image: "ameenplml/test:latest"
+    image: "ameenplml/sage:latest"
     ports:
       - "8000:5000"
