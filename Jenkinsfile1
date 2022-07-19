@@ -14,15 +14,6 @@ pipeline {
       }
     }
 
-    stage('Pull image') {
-      steps {
-        script {
-          docker.withRegistry( '', registryCredential ) {
-             dockerImage.pull('latest')
-      } 
-     }
-    }
-    }
     stage('Building image') {
       steps{
         sh 'docker-compose up -d'
