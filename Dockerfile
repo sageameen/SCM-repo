@@ -19,5 +19,5 @@ RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}.
  && cp /tmp/docker/docker /usr/local/bin/docker \
  && chmod +x /usr/local/bin/docker \
  && rm -rf /tmp/docker-${DOCKER_VERSION}.tgz /tmp/docker \
- && curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose \
+ && curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
  && chmod +x /usr/local/bin/docker-compose
