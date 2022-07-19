@@ -1,10 +1,4 @@
 pipeline {
-  environment {
-    imagename = "ameenplml/test"
-    registryCredential = "ameenplml"
-    dockerImage = ''
-  }
-
   agent any
   stages {
     stage("verify tooling") {

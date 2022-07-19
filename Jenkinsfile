@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    imagename = "ameenplml/test"
+    imagename = "ameenplml/sage"
     registryCredential = "ameenplml"
     dockerImage = ''
   }
